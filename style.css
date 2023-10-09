@@ -96,6 +96,8 @@ html {
 }
 
 .first-section .conteudo-principal {
+  width: min(1280px, 95%);
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -104,6 +106,7 @@ html {
 }
 
 .first-section h1 {
+  text-align: center;
   color: #ffc506;
   font-size: 6rem;
   text-transform: uppercase;
@@ -149,6 +152,7 @@ html {
 /* Cardápio */
 
 .cardapio {
+  padding: 3rem 0;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -171,7 +175,7 @@ html {
   margin-top: 2rem;
   margin-bottom: 2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 550px));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
   justify-content: center;
   align-items: center;
   gap: 30px;
@@ -212,14 +216,17 @@ html {
   text-decoration: underline;
 }
 
-.itens-cardapio div {
+.itens-cardapio > div {
   background-color: #5e5252;
-  box-shadow: 0px 0px 4px 1px;
+  border-radius: 4px;
+  height: 380px;
+  width: min(100%, 250px);
 }
 
 .itens-cardapio img {
   width: 100%;
   height: 200px;
+  object-fit: contain;
 }
 
 .itens-cardapio .info .pedir {
@@ -514,4 +521,22 @@ footer {
   }
 
 
+}
+
+.skeleton {
+  width: 250px;
+  height: 380px;
+  animation: skeleton-loading 1s linear infinite alternate;
+  border-radius: 4px;
+  border: none;
+  box-shadow: none;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 80%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
 }
